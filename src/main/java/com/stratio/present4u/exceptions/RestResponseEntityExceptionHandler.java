@@ -66,14 +66,14 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
 
     // 404
-//
-//    @ExceptionHandler(value = {EntityNotFoundException.class})
-//    protected ResponseEntity<Object> handleNotFound(final RuntimeException ex, final WebRequest request) {
-//        final String bodyOfResponse = "Entidad no encontrada en la Base de Datos";
-//        log.error(bodyOfResponse);
-//        log.debug(ex.getMessage());
-//        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
-//    }
+
+    @ExceptionHandler(value = {EntityNotFoundException.class})
+    protected ResponseEntity<Object> handleNotFound(final RuntimeException ex, final WebRequest request) {
+        final String bodyOfResponse = "Entidad no encontrada en la Base de Datos";
+        log.error(bodyOfResponse);
+        log.debug(ex.getMessage());
+        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
 
     // 409
 

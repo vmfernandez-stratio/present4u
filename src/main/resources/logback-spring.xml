@@ -1,0 +1,14 @@
+<configuration debug="true" scan="true" scanPeriod="10 seconds">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <springProfile name="dev,staging">
+        <logger name="com.stratio.present4u" level="DEBUG" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+        >
+    </springProfile>
+    <springProfile name="production">
+        <logger name="com.stratio.present4u" level="WARN" additivity="false">
+            <appender-ref ref="FILE"/>
+        </logger>
+    </springProfile>
+</configuration>
